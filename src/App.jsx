@@ -2,6 +2,8 @@ import { useState } from 'react'
 import heroImg from './assets/hero.png'
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import './index.css'
 import './App.css'
 
 function App() {
@@ -9,112 +11,53 @@ function App() {
 
   return (
     <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+    {/*
+    overall theme will be either CyberPunk colors(blues, yellows, and darker colors)
+    or a retro vaporwave style (cyan, pink, and dark grays) (could potentially mix 2 options)
+    NOTE: could be sick to make the whole screen look like a CRT screen. (including rounded screen look)
+    - will absolutely have CRT lines on the screen at the minimum
+    - could also be cool to add navigation by using arrow keys
+    - if page has an error, have a separate browser game to play in the meantime like the google dinosaur game (unlikely)
+    - page not found shows CRT no signal screen or static screen
+    */}
+      <div className="container">
+        <div className="row align-items-start">
+          {/* left side will stay static in one place and hold links to navigate right side */}
+          <header className="col-lg-5 vh-100">
+            <h1>Taylor Rodgers</h1>
+            <h3>Computer Science Student</h3>
+            <p>&gt;brief summary here</p>
 
-      <div className="ticks"></div>
+            <div className="links">
+              <a href="github.com">Git</a>
+              <a href="linkedin.com">LinkedIn </a>
+              <a href="Resume.pdf">Resume</a>
+            </div>
+          </header>
+          {/* right side will contain things like projects and experience. will be scrollable up and down */}
+          <main className="col-lg-7">
+            <section>
+              <h1>About Section / Introduction</h1>
+              <p>&gt; insert Introduction here</p>
+            </section>
+            <section>
+              <h1>Schooling</h1>
+              <p>&gt; degrees/courses will go here</p>
+            </section>
+            <section>
+              <h1>Projects</h1>
+              <p>&gt; personal and maybe school projects will go here</p>
+            </section>
+            <section>
+              <h1>Skills</h1>
+              <p>&gt; skills will go here, might remove this later</p>
+            </section>
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
+          </main>
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
+        </div>
+
+      </div>
     </>
   )
 }
