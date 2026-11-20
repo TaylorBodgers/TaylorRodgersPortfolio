@@ -1,6 +1,8 @@
+import { FaGithub, FaLinkedin, FaFileAlt } from 'react-icons/fa';
 import { useState } from 'react'
 import './index.css'
 import './App.css'
+
 
 function App() {
 
@@ -19,27 +21,45 @@ function App() {
     - when a section comes into view it goes from static to a clear image like tuning into a channel on antenna
     */}
       <div className="portfolio-container">
+        <div className="crt-overlay">
+          
+        </div>
         <div className="layout">
           {/* left side will stay static in one place and hold links to navigate right side */}
-          <header className="sticky-lg-top vh-100">
-            <h1>TAYLOR RODGERS</h1>
-            <h2>Computer Science Student</h2>
-            <p>&gt;brief summary here</p>
-
-            <nav className="links">
-              <a href="github.com">Git</a>
-              <a href="linkedin.com">LinkedIn</a>
-              <a href="Resume.pdf">Resume</a>
+          <header className="left-col">
+            <div>
+              <h1>TAYLOR RODGERS</h1>
+              <h2>&gt; FULL-STACK DEV & MACHINIST_</h2>
+              <p>Building detail-oriented, full-stack applications. Background in high-tolerance CNC machining.</p>
+            </div>
+            <nav className="int-links">
+              <a className='btn' href="#About">ABOUT</a>
+              <a className='btn' href="#Education">EDUCATION</a>
+              <a className='btn' href="#Projects">PROJECTS</a>
+              <a className='btn' href="#Skills">SKILLS</a>
+            </nav>
+            <nav className="ext-links">
+              <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                <FaGithub />
+              </a>
+              <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <FaLinkedin />
+              </a>
+              <a href="/Resume.pdf" target="_blank" rel="noopener noreferrer" aria-label="Resume">
+                <FaFileAlt />
+              </a>
             </nav>
           </header>
           {/* right side will contain things like projects and experience. will be scrollable up and down */}
-          <main className="col-lg-6">
+          <main className="right-col">
             <section id="About">
-              <h2>About Section / Introduction</h2>
+              <h2>&gt; About</h2>
+              {/* <p>&#123;</p> */}
               <p>&gt; insert Introduction here</p>
+              {/* <p>&#125;</p> */}
             </section>
             <section id="Education">
-              <h2>Schooling</h2>
+              <h2>Education</h2>
               <p>&gt; degrees/courses will go here</p>
             </section>
             <section id="Projects">
