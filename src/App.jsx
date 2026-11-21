@@ -57,7 +57,7 @@ function App() {
               <a href="https://www.linkedin.com/in/taylorrodgers0007" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                 <FaLinkedin />
               </a>
-              <a href="/Rodgers, Taylor Resume (1).pdf" target="_blank" rel="noopener noreferrer" aria-label="Resume">
+              <a href={`${import.meta.env.BASE_URL}Rodgers_Taylor_Resume.pdf`} target="_blank" rel="noopener noreferrer" aria-label="Resume">
                 <FaFileAlt />
               </a>
             </nav>
