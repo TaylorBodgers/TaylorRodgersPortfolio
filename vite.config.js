@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/TaylorRodgersPorfolio/',
+  base: '/TaylorRodgersPortfolio/',
   server: {
     watch: {
       usePolling: true
