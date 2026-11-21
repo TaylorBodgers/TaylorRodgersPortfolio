@@ -2,11 +2,18 @@
 
 :root {
   --bg-color: #111116;
-  --text-main: #ffffffa3;
-  --primary-accent: #0abdc6;
+  --card-bg: #000000;
+  --text-main: #ffffff;
+  --primary-accent: #0ff3ff;
+  --primary-dark: #0abcc682;
   --secondary-accent: #d0009c;
+  --secondary-dark: #d0009c82;
   --yolo: #00b3ff;
   --yellow: #b9c60a;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 .portfolio-container {
@@ -20,9 +27,9 @@
   position: fixed;
   inset: 0;
   z-index: 999;
-  pointer-events: none; /* lets clicks and text selection pass right through */
+  pointer-events: none;
 
-  /* scanlines + edge vignette go here */
+
   background: repeating-linear-gradient(
     to bottom,
     rgba(4, 62, 60, 0.35) 0px,
@@ -40,7 +47,7 @@
   left: 0;
   right: 0;
   height: 8px;
-  background: rgba(8, 153, 153, 0.12); /* faint tint of your --primary-accent */
+  background: rgba(8, 153, 153, 0.12);
   box-shadow: 0 0 12px rgba(8, 153, 153, 0.2);
   animation: scan-bar 12s linear infinite;
 }
@@ -77,25 +84,50 @@
   position: sticky;
   top: 0;
   height: 100vh;
+  box-sizing: border-box;
+  padding: 4rem 0;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: flex-start;
+  margin-right: 6rem;
 }
 
 .right-col {
-  padding-top: 3.8rem;
+  padding-top: 3rem;
+  padding-bottom: 35vh;
 }
 
 p {
   font-size: 1.2rem;
+  letter-spacing: normal;
+  color: var(--text-main);
+  text-shadow: 0 0 10px var(--primary-accent);
+  padding: .5rem;
 }
 
+.intro {
+  padding: 0;
+}
 
-@media (max-width: 900px) {
+.mouse-glow {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(
+      200px circle at calc(var(--mouse-x, -1000px)) calc(var(--mouse-y, -1000px)),
+      rgba(56, 232, 255, 0.055),
+      transparent 100%
+    );
+}
+
+@media (max-width: 1000px) {
   .layout {
     grid-template-columns: 1fr;
-    text-align: center;
+    text-align: start;
+    padding: 0 3rem 0 3rem;
   }
 
   .left-col {
@@ -107,41 +139,55 @@ p {
 
 h1 {
   color:var(--primary-accent);
-  font-size: 3.5rem;
+  font-size: 4rem;
   text-shadow:
     4px -4px 4px var(--secondary-accent),
     2px 0 2px var(--primary-accent),
     4px -4px 125px var(--yolo);
-  margin-bottom: 0;
+  margin: 0;
+  padding: 0;
 }
 
 h2 {
   color:var(--secondary-accent);
-    text-shadow:
-    2px -1px 1px var(--primary-accent),
-    1px 0 1px var(--secondary-accent);
-  margin-top: .5rem;
+  font-size: 1.72rem;
+  text-shadow:
+    2px -2px 2px var(--primary-accent),
+    0 0 5px var(--secondary-accent);
+  margin: .5rem 0 .5rem 0;
+}
+
+h3 {
+  padding: .3rem;
 }
 
 .int-links {
   display: flex;
   flex-direction: column;
+  text-shadow: 0 0 2px var(--yellow);
+}
+
+.int-links .btn:hover {
+  transform: translate(-2px, -2px);
 }
 
 .ext-links{
   display: flex;
-  gap: 25px;
+  gap: 2rem;
 }
 
 .ext-links a {
-  color: var(--yellow);
+  color: var(--secondary-accent);
   font-size: 1.8rem;
   transition: color 0.2s, filter 0.2s;
-  filter: drop-shadow(0 0 8px var(--yellow));
+  filter: drop-shadow(2px -2px 1px var(--primary-accent));
 }
 
 .ext-links a:hover {
-  color: var(--yolo);
+  color: var(--primary-accent);
+  transform: translate(-2px, -2px);
+  transition: .2s;
+  filter: drop-shadow(2px -2px 1px var(--secondary-accent));
 }
 
 .btn {
@@ -154,18 +200,87 @@ h2 {
   font-size: 1.3rem;
   transition: all 0.3s ease;
   margin-bottom: .5rem;
-  box-shadow: 3px 3px 2px #00b3ff;
+  box-shadow: 3px -3px 2px var(--yolo);
 }
 
 .btn:hover {
   background: var(--yolo);
   color: var(--bg-color);
-  box-shadow: 3px 3px 2px var(--yellow);
+  box-shadow: 3px -3px 2px var(--yellow);
 }
 
 section {
-  padding-bottom: 5rem;
+  padding-bottom: 2rem;
+  scroll-margin-top: 3.5rem;
 }
+
+.card {
+  border: 2px solid var(--primary-dark);
+  padding: .2rem .5rem;
+  box-shadow: 3px -3px 2px var(--secondary-dark),
+  0 0 5px var(--primary-dark);
+  transition: transform 0.25s ease, border-color .25s ease, box-shadow .25s ease;
+  margin-bottom: 1.5rem;
+  background-color: var(--card-bg);
+}
+
+.card:hover {
+  border: 2px solid var(--primary-accent);
+  padding: .2rem .5rem;
+  box-shadow: 3px -3px 2px var(--secondary-accent),
+  0 0 5px var(--primary-accent);
+  transform: translate(-2px, -2px);
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  border-bottom: 1px solid var(--secondary-dark);
+  font-size: 1.4rem;
+}
+
+.card-title {
+  margin: 0;
+  color: var(--primary-accent);
+  font-size: 1.4rem;
+  text-shadow: 2px -2px 2px var(--secondary-accent);
+}
+
+.card-date {
+  color: var(--secondary-accent);
+  text-shadow: 2px -2px 2px var(--primary-accent);
+}
+
+.card-sub {
+  font-size: 1.3rem;
+  margin-bottom: .3rem;
+}
+
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0 0 .5rem .5rem;
+}
+
+.card-tags span {
+  font-size: 1rem;
+  padding: 0.15rem 0.5rem;
+  border: 1px solid var(--primary-accent);
+  background: var(--bg-color);
+  color: var(--text-main);
+  text-shadow: 0 0 3px var(--primary-accent);
+  box-shadow: 2px -2px 2px var(--primary-accent);
+}
+
+.card-top a {
+  margin: .5rem .5rem 0rem 0;
+  color: var(--secondary-accent);
+  filter: drop-shadow(2px -2px 2px var(--primary-accent));
+}
+
 
 
 
