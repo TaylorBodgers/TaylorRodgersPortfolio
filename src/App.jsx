@@ -1,4 +1,4 @@
-import { FaGithub, FaLinkedin, FaFileAlt } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaFileAlt, FaYoutube } from 'react-icons/fa';
 import { FaCircleArrowUp } from "react-icons/fa6";
 import { useEffect } from 'react'
 import './index.css'
@@ -27,8 +27,8 @@ function App() {
     - could also be cool to add navigation by using arrow keys
     - if page has an error, have a separate browser game to play in the meantime like the google dinosaur game (unlikely)
     - page not found shows CRT no signal screen or static screen
-    - on selection of a project it would be cool if it did the thing where
-      it takes the little image and enlarges it on the page in front of you too like the old windows zooming rectangle
+    - on selection of a project it would be cool if it did the thing where it takes the little image 
+      and enlarges it on the page in front of you too like the old windows zooming rectangle
     - when a section comes into view it goes from static to a clear image like tuning into a channel on antenna
     */}
     <div className="mouse-glow" />
@@ -108,7 +108,7 @@ function App() {
               <div className="card">
                 <div className="card-top">
                   <h3 className="card-title">Retro CRT Portfolio</h3>
-                  <a href="#"><FaCircleArrowUp /></a>
+                  <a href="https://github.com/TaylorBodgers/TaylorRodgersPortfolio" target="_blank" rel="noopener noreferrer"><FaGithub /></a>
                 </div>
                 <p className="card-sub">
                   Built this site from scratch in React and custom CSS instead of copying a template.
@@ -125,7 +125,7 @@ function App() {
               <div className="card">
                 <div className="card-top">
                   <h3 className="card-title">AlgoGauge - Algorithm Learning WebApp</h3>
-                  <a href="#"><FaCircleArrowUp /></a>
+                  <a href="https://youtu.be/l3eHwF3Ub1k" target="_blank" rel="noopener noreferrer"><FaYoutube /></a>
                 </div>
                 <p className="card-sub">
                   CS Capstone Project in a small student team. I worked on the interactive learning module, putting
@@ -142,10 +142,10 @@ function App() {
               <div className="card">
                 <div className="card-top">
                   <h3 className="card-title">Web Audio Synthesizer</h3>
-                  <a href="#"><FaCircleArrowUp /></a>
+                  <a href="https://github.com/TaylorBodgers/Synthesizer" target="_blank" rel="noopener noreferrer"><FaGithub /></a>
                 </div>
                 <p className="card-sub">
-                  A browser-based synth i built from scratch using the Web Audio API. It supports both computer-keyboard
+                  A browser-based synth I built from scratch using the Web Audio API. It supports both computer-keyboard
                   and MIDI controller input, with real-time controls for switching waveforms, dialing in a cutoff filter,
                   and shaping sound with an ADSR envelope.
                 </p>
